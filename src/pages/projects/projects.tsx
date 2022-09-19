@@ -1,6 +1,5 @@
 import { Box, Divider, Heading } from "@chakra-ui/react";
 
-import Head from "next/head";
 import Link from "next/link";
 import type { NextPage } from "next";
 import { trpc } from "../utils/trpc";

@@ -14,8 +14,6 @@ type Props = {
 const NavLink = ({ href, children, ...rest }: Props) => {
   const router = useRouter();
 
-  console.log(router);
-
   const isActive = router.asPath === href;
 
   return (
