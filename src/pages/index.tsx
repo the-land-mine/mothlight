@@ -1,12 +1,23 @@
-import { Box, Heading } from "@chakra-ui/react";
+import {
+  Box,
+  HStack,
+  Heading,
+  Stat,
+  StatArrow,
+  StatGroup,
+  StatHelpText,
+  StatLabel,
+  StatNumber,
+} from "@chakra-ui/react";
 
-import Head from "next/head";
 import type { NextPage } from "next";
-import { trpc } from "../utils/trpc";
+
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+const StatusCard = ({ children }: any) => {
+  return <Stat className="border p-5 rounded-lg">{children}</Stat>;
+};
 
 const Home: NextPage = () => {
-  const hello = trpc.useQuery(["example.hello", { text: "from Mothlight" }]);
-
   return (
     <>
       <Box py="8" px="5">
@@ -15,7 +26,39 @@ const Home: NextPage = () => {
         </Heading>
 
         <div className="mt-4">
-          {hello.data ? <p>{hello.data.greeting}</p> : <p>Loading..</p>}
+          <HStack>
+            <StatusCard>
+              <StatLabel>Projects</StatLabel>
+              <StatNumber>10</StatNumber>
+              <StatHelpText>
+                <StatArrow type="increase" />
+              </StatHelpText>
+            </StatusCard>
+            <StatusCard>
+              <StatLabel>Pending</StatLabel>
+              <StatNumber>45</StatNumber>
+              <StatHelpText>
+                <StatArrow type="decrease" />
+                9.05%
+              </StatHelpText>
+            </StatusCard>{" "}
+            <StatusCard>
+              <StatLabel>Resolved</StatLabel>
+              <StatNumber>45</StatNumber>
+              <StatHelpText>
+                <StatArrow type="increase" />
+                50.05%
+              </StatHelpText>
+            </StatusCard>{" "}
+            <StatusCard>
+              <StatLabel>Reopen</StatLabel>
+              <StatNumber>45</StatNumber>
+              <StatHelpText>
+                <StatArrow type="increase" />
+                50.05%
+              </StatHelpText>
+            </StatusCard>
+          </HStack>
         </div>
       </Box>
     </>
