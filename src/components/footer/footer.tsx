@@ -5,7 +5,7 @@ const Footer = () => {
   return (
     <>
       <Box px="5" py="10">
-        Copyright © 2000 - 2022 <a href="#">BugTracker</a> team
+        Copyright © 2000 - 2022 <a href="#">Mothlight</a>.
       </Box>
     </>
   );

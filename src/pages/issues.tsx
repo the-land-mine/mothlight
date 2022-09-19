@@ -1,6 +1,5 @@
 import { Box, Heading } from "@chakra-ui/react";
 
-import Head from "next/head";
 import type { NextPage } from "next";
 import { trpc } from "../utils/trpc";
 
@@ -11,7 +10,7 @@ const Home: NextPage = () => {
     <>
       <Box py="8" px="5">
         <Heading size="md" mb="4 ">
-          Dashboard
+          Issues
         </Heading>
 
         <div className="mt-4">
